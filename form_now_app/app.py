@@ -12,7 +12,7 @@ app = Flask(__name__)
 # the URL / 
 @app.route("/")
 def hello_world():
-    return f'<h1>Hello From the Flask-MySQL Connection Tutorial</h1>'
+    return f'<h1>ur ugly</h1>'
 
 
 # If this file is being run directly, then run the application 
