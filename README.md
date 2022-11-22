@@ -2,6 +2,11 @@
 
 ## TODO
 1. sample data
+  - Analyst
+  - AnalystForm
+  - Form
+  - Creator
+  - etc.
 2. wireframe for each user (at least 2 views)
 6. Relation Model (get from datagrip)
 
