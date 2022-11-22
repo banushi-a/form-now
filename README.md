@@ -3,8 +3,6 @@
 ## TODO
 1. sample data
 2. wireframe for each user (at least 2 views)
-3. ER diagram for each view
-5. combined ER diagram
 6. Relation Model (get from datagrip)
 
 ### ER DIAGRAM
