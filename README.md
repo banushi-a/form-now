@@ -8,6 +8,7 @@
   - Creator
   - etc.
 2. wireframe for each user (at least 2 views)
+ - analyst
 6. Relation Model (get from datagrip)
 
 ### ER DIAGRAM
