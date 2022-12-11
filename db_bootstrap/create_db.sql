@@ -38,11 +38,12 @@ CREATE TABLE Forms (
 );
 
 CREATE TABLE Questions (
-    QuestionId INTEGER PRIMARY KEY,
+    QuestionId INTEGER NOT NULL AUTO_INCREMENT,
     FormId INTEGER,
     QuestionText VARCHAR(200),
     RequiresResponse BOOLEAN,
     QuestionWeight INTEGER,
+    PRIMARY KEY (QuestionId),
     FOREIGN KEY (FormId) REFERENCES Forms(FormId)
 );
 
@@ -230,46 +231,46 @@ insert into Forms (FormId, CreatorUsername, FormName) values (20, 'fbenedettiniq
 
 
 -- Questions
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (1, 1, 'How many Infinity Stones are there?', false, 5);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (2, 2, 'What is the only food that cannot go bad?', true, 7);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (3, 3, 'Which was Rene Magrittes first surrealist painting?', true, 1);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (4, 4, 'What 90s boy band member bought Myspace in 2011?', false, 2);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (5, 5, 'What is the most visited tourist attraction in the world?', false, 9);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (6, 6, 'What is the name of Hagrids pet spider?', true, 4);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (7, 7, 'What is the heaviest organ in the human body?', false, 6);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (8, 8, 'Who made the third most 3-pointers in the Playoffs in NBA history?', true, 5);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (9, 9, 'Which of these EU countries does not use the euro as its currency?', true, 7);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (10, 10, 'Which US city is the sunniest major city and sees more than 320 sunny days each year?', false, 6);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (11, 11, 'Do you consider yourself an introvert or an extrovert?', false, 8);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (12, 12, 'what would yours say?', true, 10);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (13, 13, 'How do you make decisions?', true, 3);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (14, 14, 'What challenge would you like to see your best friend take on?', false, 6);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (15, 15, 'How long do you think you could survive on your own?', false, 7);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (16, 16, 'At what age did you think you become an adult and when do you actually think you did?', true, 3);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (17, 17, 'What''s the strangest situation you ever found yourself in?', false, 3);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (18, 18, 'Do you consider yourself an introvert or an extrovert?', true, 7);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (19, 19, 'What is the last big goal you accomplished?', false, 7);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (20, 20, 'What bad decision did you make that actually turned out to be a good decision?', false, 3);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (21, 1, 'Have you ever seen a movie that you thought was better than the book?', true, 6);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (22, 1, 'What is the quickest way for you to lose respect for someone?', true, 1);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (23, 2, 'but you think in your mind it should be easy?', true, 1);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (24, 2, 'What is your current philosophy about money?', false, 10);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (25, 2, 'what would yours say?', false, 7);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (26, 2, 'What is money to you?', true, 4);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (27, 3, 'What is the last encounter you had with a random stranger?', false, 10);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (28, 3, 'What was your most recent experience of going down the rabbit hole?', false, 3);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (29, 3, 'What holiday do you think more people should celebrate?', true, 8);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (30, 4, 'What''s something that you use regularly that you wish you didn''t have to?', true, 3);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (31, 5, 'What is the quickest way for you to lose respect for someone?', true, 8);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (32, 6, 'What food have you never tried?', true, 10);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (33, 6, 'Why haven''t you done it yet?', false, 8);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (34, 7, 'What holiday do you think more people should celebrate?', false, 7);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (35, 2, 'At what age did you think you become an adult and when do you actually think you did?', false, 7);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (36, 8, 'Do you have a favorite brand?', true, 4);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (37, 8, 'What has been your 15 minutes of fame up to this point?', false, 6);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (38, 8, 'What have you been thinking about lately that has kept you up at night?', true, 6);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (39, 9, 'Have you ever seen a movie that you thought was better than the book?', true, 8);
-insert into Questions (QuestionId, FormId, QuestionText, RequiresResponse, QuestionWeight) values (40, 10, 'What challenge would you like to see your best friend take on?', false, 10);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (1, 'How many Infinity Stones are there?', false, 5);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (2, 'What is the only food that cannot go bad?', true, 7);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (3, 'Which was Rene Magrittes first surrealist painting?', true, 1);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (4, 'What 90s boy band member bought Myspace in 2011?', false, 2);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (5, 'What is the most visited tourist attraction in the world?', false, 9);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (6, 'What is the name of Hagrids pet spider?', true, 4);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (7, 'What is the heaviest organ in the human body?', false, 6);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (8, 'Who made the third most 3-pointers in the Playoffs in NBA history?', true, 5);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (9, 'Which of these EU countries does not use the euro as its currency?', true, 7);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (10, 'Which US city is the sunniest major city and sees more than 320 sunny days each year?', false, 6);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (11, 'Do you consider yourself an introvert or an extrovert?', false, 8);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (12, 'what would yours say?', true, 10);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (13, 'How do you make decisions?', true, 3);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (14, 'What challenge would you like to see your best friend take on?', false, 6);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (15, 'How long do you think you could survive on your own?', false, 7);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (16, 'At what age did you think you become an adult and when do you actually think you did?', true, 3);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (17, 'What''s the strangest situation you ever found yourself in?', false, 3);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (18, 'Do you consider yourself an introvert or an extrovert?', true, 7);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (19, 'What is the last big goal you accomplished?', false, 7);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (20, 'What bad decision did you make that actually turned out to be a good decision?', false, 3);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (1, 'Have you ever seen a movie that you thought was better than the book?', true, 6);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (1, 'What is the quickest way for you to lose respect for someone?', true, 1);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (2, 'but you think in your mind it should be easy?', true, 1);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (2, 'What is your current philosophy about money?', false, 10);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (2, 'what would yours say?', false, 7);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (2, 'What is money to you?', true, 4);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (3, 'What is the last encounter you had with a random stranger?', false, 10);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (3, 'What was your most recent experience of going down the rabbit hole?', false, 3);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (3, 'What holiday do you think more people should celebrate?', true, 8);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (4, 'What''s something that you use regularly that you wish you didn''t have to?', true, 3);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (5, 'What is the quickest way for you to lose respect for someone?', true, 8);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (6, 'What food have you never tried?', true, 10);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (6, 'Why haven''t you done it yet?', false, 8);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (7, 'What holiday do you think more people should celebrate?', false, 7);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (2, 'At what age did you think you become an adult and when do you actually think you did?', false, 7);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (8, 'Do you have a favorite brand?', true, 4);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (8, 'What has been your 15 minutes of fame up to this point?', false, 6);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (8, 'What have you been thinking about lately that has kept you up at night?', true, 6);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (9, 'Have you ever seen a movie that you thought was better than the book?', true, 8);
+insert into Questions (FormId, QuestionText, RequiresResponse, QuestionWeight) values (10, 'What challenge would you like to see your best friend take on?', false, 10);
 
 
 -- MCQuestions
@@ -464,3 +465,6 @@ insert into AnalystsForms (AnalystUsername, FormId, Observations) values ('lleyn
 insert into AnalystsForms (AnalystUsername, FormId, Observations) values ('lnolletd', 18, 'The knives were out and she was sharpening hers.');
 insert into AnalystsForms (AnalystUsername, FormId, Observations) values ('oquinion4', 19, 'While on the first date he accidentally hit his head on the beam.');
 insert into AnalystsForms (AnalystUsername, FormId, Observations) values ('slinthead7', 20, 'His thought process was on so many levels that he gave himself a phobia of heights.');
+
+
+ALTER TABLE Questions AUTO_INCREMENT=100;
