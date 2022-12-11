@@ -15,17 +15,6 @@ def get_respondents():
        json_data.append(dict(zip(row_headers, row)))
    return jsonify(json_data)
 
-@respondents_blueprint.route('/respondent-response', methods=['POST'])
-def post_response():
-    respondents_blueprint.logger.info(request.form)
-    cursor = db_connection.get_db().cursor()
-    respondentId = request.form['respondent-id']
-    questionId = request.form['question-id']
-    answer = request.form['answer']
-    query = f'INSERT INTO FormsRespondentsQuestions (QuestionId, RespondentUsername, Answer) VALUES (\"{questionId}\", \"{respondentId}\", \"{answer}\")'
-    cursor.execute(query)
-    db_connection.get_db().commit()
-    return "Didn't fail!"
 
 @respondents_blueprint.route('/respondent-forms')
 def get_respondent_forms():
