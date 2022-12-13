@@ -44,7 +44,7 @@ def get_respondent_num_forms():
 def get_respondent_num_questions():
   creator = request.args.get('respondent-id')
   cur = db_connection.get_db().cursor()
-  cur.execute("select count(*) as count from Respondents natural join FormsRespondentsQuestions where RespondentUsername = '" + str(creator) +"'")
+  cur.execute("select count(*) as count from FormsRespondentsQuestions where RespondentUsername = '" + str(creator) +"'")
   row_headers = [x[0] for x in cur.description]
   json_data = []
   theData = cur.fetchall()
@@ -56,11 +56,10 @@ def get_respondent_num_questions():
 def get_respondent_num_correct_mc_questions():
   creator = request.args.get('respondent-id')
   cur = db_connection.get_db().cursor()
-  cur.execute("""select count(*) as num from Respondents 
-                                 natural join FormsRespondentsQuestions
+  cur.execute("""select count(*) as num from FormsRespondentsQuestions
                                  natural join Questions
                                  join MCQuestions on MCQuestionId = Questions.QuestionId
-                                 natural join MCQuestionPossibilities where MCQuestionCorrect = 1 and RespondentUsername = '""" + str(creator) +"'")
+                                 natural join MCQuestionPossibilities where MCQuestionCorrect = 1 and MCQuestionPossibilityText = Answer and RespondentUsername = '""" + str(creator) +"'")
   row_headers = [x[0] for x in cur.description]
   json_data = []
   theData = cur.fetchall()
@@ -72,11 +71,10 @@ def get_respondent_num_correct_mc_questions():
 def get_respondent_num_wrong_mc_questions():
   creator = request.args.get('respondent-id')
   cur = db_connection.get_db().cursor()
-  cur.execute("""select count(*) as num from Respondents 
-                                 natural join FormsRespondentsQuestions
+  cur.execute("""select count(*) as num from FormsRespondentsQuestions
                                  natural join Questions
-                                 join MCQuestions on Questions.QuestionId = MCQuestionId
-                                 natural join MCQuestionPossibilities where MCQuestionCorrect = 0 and RespondentUsername = '""" + str(creator) +"'")
+                                 join MCQuestions on MCQuestionId = Questions.QuestionId
+                                 natural join MCQuestionPossibilities where MCQuestionCorrect = 0 and MCQuestionPossibilityText = Answer and RespondentUsername = '""" + str(creator) +"'")
   row_headers = [x[0] for x in cur.description]
   json_data = []
   theData = cur.fetchall()
